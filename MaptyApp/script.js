@@ -95,7 +95,33 @@ class App{
         inputCadence.closest('.form__row').classList.toggle('form__row--hidden');
     }
     _newWorkout(e) {
+        // loop over the array of isFinite
+        const validInputs = (...inputs) => inputs.every(input => Number.isFinite(inp));
+
+        
         e.preventDefault();
+        // Get data from the form
+        const type = inputType.value;
+        const distance = +inputDistance.value;
+        const elevation = +inputElevation.value;
+
+        // If workout is running create running object
+        if(type === 'running') {
+            const cadence = +inputCadence.value;
+            // check if the data is valid
+            if(!validInputs(distance,duration,cadence)) {
+
+            }
+            return alert('Inputs have to be positive numbers');
+        }
+        // If workout is cycling create cycling object
+        if(type === 'cycling') {
+            const elevation = +inputElevation.value;
+            if(!validInputs(distance,duration,elevation)) {
+
+            }
+            return alert('Inputs have to be positive numbers');
+        }
             // Clear input fields
             inputDistance.value = inputDistance.value = inputCadence.value = inputElevation.value = '';
             // Display markers on
