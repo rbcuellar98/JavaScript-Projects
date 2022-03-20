@@ -10,6 +10,8 @@
   "author": "Rolando Banasco Cuellar",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.3.2"
+    "@parcel/transformer-sass": "^2.3.2",
+    "parcel": "^2.3.2",
+    "sass": "^1.49.9"
   }
 }
